@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>MainForm.ui.qml</file>
+        <file>Header.qml</file>
+        <file>View.qml</file>
+        <file>ImageEditor.qml</file>
+        <file>AddButton.qml</file>
+        <file>ErrorMessage.qml</file>
+        <file>DeleteButton.qml</file>
+        <file>Message.qml</file>
+    </qresource>
+</RCC>
