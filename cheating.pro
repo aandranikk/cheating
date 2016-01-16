@@ -1,12 +1,14 @@
 TEMPLATE = app
 
-QT += qml quick
+QT += qml quick network
 
 SOURCES += main.cpp \
     filedatamanager.cpp \
     datamodel.cpp \
     imageprovider.cpp \
-    backend.cpp
+    backend.cpp \
+    myclient.cpp \
+    serverdatamanager.cpp
 
 RESOURCES += qml.qrc
 
@@ -21,7 +23,9 @@ HEADERS += \
     filedatamanager.h \
     datamodel.h \
     imageprovider.h \
-    backend.h
+    backend.h \
+    serverdatamanager.h \
+    myclient.h
 
 QMAKE_CXXFLAGS += -std=c++11
 CONFIG += c++11

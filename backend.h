@@ -12,6 +12,7 @@
 #include "filedatamanager.h"
 #include "datamodel.h"
 #include "imageprovider.h"
+#include "serverdatamanager.h"
 
 class BackEnd : QObject
 {
@@ -19,7 +20,7 @@ class BackEnd : QObject
 
 public:
     BackEnd()
-        : m_dataManager(new FileDataManager(QDir::current().absolutePath() + "/FileDataManagerDir"))
+        : m_dataManager(new ServerDataManager("localhost",2323))
         , m_model(m_dataManager)
     {}
 
