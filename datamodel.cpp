@@ -61,6 +61,9 @@ void DataModel::themeClicked(const QModelIndex& themeIndex)
 
     for (auto d : m_dataManager->GetImagesList(subjectName, themeName))
     {
+        QImage img = m_dataManager->GetImage(d);
+       // img.save(QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) +"/"+ d); // for Android
+        img.save(QCoreApplication::applicationDirPath()+ "/pictures/" + d); //for linux(windows)
         itemFromIndex(themeIndex)->appendRow(new QStandardItem(d));
     }
 }

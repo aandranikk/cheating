@@ -20,7 +20,7 @@ class BackEnd : QObject
 
 public:
     BackEnd()
-        : m_dataManager(new ServerDataManager("localhost",2323))
+        : m_dataManager(new ServerDataManager("192.168.1.6",2323))
         , m_model(m_dataManager)
     {}
 

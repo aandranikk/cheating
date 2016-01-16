@@ -2,7 +2,7 @@
 
 MyClient::MyClient(QString strHost,int nPort) : nextBlockSize(0) {
 
-    pTcpSocket = new QTcpSocket(0);
+    pTcpSocket = new QTcpSocket(this);
     pTcpSocket->connectToHost(strHost, nPort);
 
 }

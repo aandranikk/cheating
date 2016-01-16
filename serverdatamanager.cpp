@@ -57,7 +57,7 @@ int ServerDataManager::AddImage(const QString& subjectName, const QString& theme
 
 
 bool ServerDataManager::DeleteSubject(const QString& subjectName){
-    client->sendRequestToServer(QString("DELETESUBJECT %1").arg(subjectName));
+    client->sendRequestToServer(QString("DELETESUBJECT %1  ").arg(subjectName));
     return true;
 }
 
@@ -67,11 +67,11 @@ bool ServerDataManager::DeleteTheme(const QString& subjectName, const QString& t
 }
 
 bool ServerDataManager::DeleteImage(const QString& subjectName, const QString& themeName, const QString& imageName){
-    client->sendRequestToServer(QString("DELETEIMAGE %1").arg(imageName));
+    client->sendRequestToServer(QString("DELETEIMAGE %1  ").arg(imageName));
     return true;
 }
 
 bool ServerDataManager::SwapImage(const QImage& image,const QString& imageName){
-    client->sendImageToServer(QString("SWAPIMAGE %1").arg(imageName),image);
+    client->sendImageToServer(QString("SWAPIMAGE %1  ").arg(imageName),image);
     return true;
 }

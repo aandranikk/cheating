@@ -20,10 +20,12 @@ Item {
         mainImage.visible = true
         mainImage.rotation = 0
 
-        mainImage.source = "image://ImageProvider/" +
-                subjects.currentItem.mdata.display + "/" +
-                themes.currentItem.mdata.display + "/" +
-                images.currentItem.mdata.display
+      //  mainImage.source = "image://ImageProvider/" +
+      //          subjects.currentItem.mdata.display + "/" +
+      //          themes.currentItem.mdata.display + "/" +
+      //          images.currentItem.mdata.display
+        mainImage.source = "file://" + currPicDir +
+                            images.currentItem.mdata.display
         blackAndWhiteEffect.source = mainImage
     }
 

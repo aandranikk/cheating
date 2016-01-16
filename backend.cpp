@@ -20,6 +20,9 @@ void BackEnd::run()
 
     rc->setContextProperty("backEnd", this);
     rc->setContextProperty("dataModelBE", &m_model);
+    rc->setContextProperty("currPicDir",QCoreApplication::applicationDirPath()+"/pictures/"); // for linux(windows)
+    //rc->setContextProperty("currPicDir",
+    //                       QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + "/"); //for android
 }
 
 void BackEnd::subjectClicked(const QModelIndex& subjectIndex)

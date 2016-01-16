@@ -2,6 +2,8 @@
 #define DATAMODEL_H
 
 #include <QStandardItemModel>
+#include <QCoreApplication>
+#include <QStandardPaths>
 
 #include "abstractdatamanager.h"
 

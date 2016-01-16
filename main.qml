@@ -296,11 +296,12 @@ ApplicationWindow {
                 sourceSize.height: height
 
                 asynchronous: true
-                source: "image://ImageProvider/" +
-                        subjects.currentItem.mdata.display + "/" +
-                        themes.currentItem.mdata.display + "/" +
-                        display
+             //   source: "image://ImageProvider/" +
+             //           subjects.currentItem.mdata.display + "/" +
+             //           themes.currentItem.mdata.display + "/" +
+             //           display
 
+                source: "file://" + currPicDir + model.display
                 MouseArea {
                     anchors.fill: parent
                     hoverEnabled: true

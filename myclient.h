@@ -5,7 +5,9 @@
 #include <QDataStream>
 #include <QImage>
 
-class MyClient {
+class MyClient : public QObject {
+
+    Q_OBJECT
 
 private:
     QTcpSocket* pTcpSocket;
