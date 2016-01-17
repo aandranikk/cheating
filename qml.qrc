@@ -9,5 +9,7 @@
         <file>ErrorMessage.qml</file>
         <file>DeleteButton.qml</file>
         <file>Message.qml</file>
+        <file>PrintButton.qml</file>
+        <file>ImagePrinter.qml</file>
     </qresource>
 </RCC>

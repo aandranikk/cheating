@@ -159,7 +159,45 @@ QString BackEnd::deleteSelectedImages()
     return "";
 }
 
+void BackEnd::printClicked(const quint16 &column, const quint16 &row,const QModelIndex& themeIndex){
+    QPrinter printer;
 
+    printer.setResolution(QPrinter::HighResolution);
+
+    QPrintDialog *dlg = new QPrintDialog(&printer,0);
+
+    if(dlg->exec() == QDialog::Accepted) {
+
+        QPainter painter;
+        painter.begin(&printer);
+
+        for (int i = 0; i < m_model.rowCount(themeIndex);)
+        {
+                for (int k=0; k<row; ++k)
+                    for (int j=0; j<column && i < m_model.rowCount(themeIndex); ++j, ++i)
+                    {
+                        QString imageName = themeIndex.child(i,0).data(Qt::DisplayRole).toString();
+                        QImage qi = QImage(QCoreApplication::applicationDirPath()+"/pictures/"+imageName);
+
+                        double xscale = printer.pageRect().width()/double(qi.width())/column;
+                        double yscale = printer.pageRect().height()/double(qi.height())/row;
+                        double scale = qMin(xscale, yscale);
+
+                        painter.scale(scale, scale);
+
+                        painter.drawImage(j*printer.pageRect().width()/double(column)/scale, k*printer.pageRect().height()/double(row)/scale, qi);
+
+                        painter.scale(1/scale, 1/scale);
+                    }
+
+
+                if (i<m_model.rowCount(themeIndex))
+                    printer.newPage();
+
+        }
+    delete dlg;
+    }
+}
 
 
 

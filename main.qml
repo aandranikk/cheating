@@ -381,6 +381,7 @@ ApplicationWindow {
             }
 
             DeleteButton {
+                id: deleteButton
                 visible: themes.currentIndex != -1
                 anchors.left: addButton.right
                 anchors.right: undefined
@@ -390,7 +391,23 @@ ApplicationWindow {
                     backEnd.deleteSelectedImages()
                 }
             }
+
+            PrintButton {
+                id: printButton
+                visible: themes.currentIndex != -1
+                anchors.left: deleteButton.right
+                anchors.right: undefined
+                anchors.leftMargin: 5
+
+                mouseArea.onClicked: {
+                    imagePrinter.visible = true
+                    mainContent.visible = false
+
+                }
+            }
         }
+
+
 
         GridView {
             id: images
@@ -454,6 +471,9 @@ ApplicationWindow {
             }
         }
     }
+
+    ImagePrinter {id: imagePrinter}
+
 }
 
 

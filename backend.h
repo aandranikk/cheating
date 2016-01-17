@@ -8,6 +8,8 @@
 #include <QQuickItem>
 #include <QItemSelectionModel>
 #include <QDir>
+#include <QPrinter>
+#include <QPrintDialog>
 
 #include "filedatamanager.h"
 #include "datamodel.h"
@@ -39,6 +41,8 @@ public:
 
     Q_INVOKABLE void selectImage(const QModelIndex& index);
     Q_INVOKABLE QString deleteSelectedImages();
+
+    Q_INVOKABLE void printClicked(const quint16& column,const quint16& row,const QModelIndex& themeIndex);
 
 public slots:
     void subjectClicked(const QModelIndex& subjectIndex);
